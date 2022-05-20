@@ -1,0 +1,47 @@
+<div class="main">
+   <div class="login">
+      <form [formGroup]="form" (ngSubmit)="onSubmit()" class="login-content">
+         <p class="p-login">posts</p>
+         <input formControlName="userLogin" placeholder="Логин" />
+         <span
+            *ngIf="
+               form.get('userLogin').invalid && form.get('userLogin').touched
+            "
+         >
+            <span *ngIf="form.get('userLogin').errors['required']">
+               Введите логин
+            </span>
+         </span>
+         <input
+            formControlName="userPassword"
+            type="password"
+            placeholder="Пароль"
+         />
+         <span
+            *ngIf="
+               form.get('userPassword').invalid &&
+               form.get('userPassword').touched
+            "
+         >
+            <span *ngIf="form.get('userPassword').errors['required']">
+               Введите пароль
+            </span>
+         </span>
+         <button
+            [disabled]="form.invalid || form.disabled"
+            type="submit"
+            class="btn"
+         >
+            Войти
+         </button>
+
+         <div class="login-content-p">
+            <p class="login-content-p-1"><a href="#">Забыли пароль?</a></p>
+            <p class="login-content-p-2"><span>Нет аккаунта?</span></p>
+            <p class="login-content-p-3">
+               <a routerLink="/registration">Зарегистироваться</a>
+            </p>
+         </div>
+      </form>
+   </div>
+</div>

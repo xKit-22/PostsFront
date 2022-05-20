@@ -1,0 +1,75 @@
+.main {
+  margin-right: 270px;
+  margin-left: 270px;
+  margin-top: 50px;
+}
+
+.main-info {
+  display: flex;
+}
+
+.main-info-numbers {
+  width: 100%;
+}
+
+figure {
+  padding: 0;
+  margin: 0 90px 0 0;
+}
+
+.main-info-numbers-name {
+  font-family: 'Roboto';
+  font-weight: 400;
+  font-size: 44px;
+  color: #F3A683;
+  margin-bottom: 30px;
+}
+
+.main-info-numbers-statistics {
+  display: flex;
+  justify-content: space-between;
+}
+
+.main-info-numbers-statistics div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.main-info-numbers-statistics-number {
+  font-family: 'Roboto';
+  font-weight: 500;
+  font-size: 50px;
+  color: #F3A683;
+}
+
+.main-info-numbers-statistics-text {
+  font-family: 'Roboto';
+  font-weight: 300;
+  font-size: 25px;
+  color: #FFFFFF;
+}
+
+.main-info-numbers-addContainer {
+  width: 100%;
+  margin-top: 40px;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.main-info-numbers-addContainer-addPost {
+  width: 63px;
+  height: 63px;
+  background: #F3A683;
+  border-radius: 9px;
+  text-align: center;
+}
+
+.main-info-numbers-addContainer-addPost span {
+  font-family: 'Roboto';
+  font-weight: 400;
+  font-size: 45px;
+  color: #292929;
+  margin-bottom: 10px;
+}
+
