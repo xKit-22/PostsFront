@@ -44,4 +44,8 @@ export class AuthService {
       this.setToken(null)
       localStorage.clear()
    }
+
+   extractUserIdFromToken(token: string): string {
+      return JSON.parse(atob(token.split("Bearer ")[1].split(".")[1])).id;
+   }
 }
