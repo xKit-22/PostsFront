@@ -1,0 +1,132 @@
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&family=Roboto:wght@500&display=swap');
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.main {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.reg {
+  background: #292929;
+  height: 583px;
+  width: 485px;
+  margin: 0 auto;
+  border: 5px solid #F3A683;
+  border-radius: 9px;
+  box-shadow: 9px 9px 10px 6px rgba(0, 0, 0, 0.5);
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.reg-content {
+  display: flex;
+  flex-direction: column;
+}
+
+.p-reg {
+  font-size: 3.125rem;
+  letter-spacing: 0.05em;
+  color: #F3A683;
+  font-weight: 800;
+  text-align: center;
+  margin-bottom: 35px;
+  text-transform: uppercase;
+  font-family: "Roboto";
+}
+
+input {
+  width: 281px;
+  height: 50px;
+  background: #F9EEED;
+  border: 3px solid #F3A683;
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 7px;
+  margin-bottom: 24px;
+  outline:none;
+  padding-left: 19px;
+  font-size: 18px;
+}
+
+input::placeholder {
+  font-family: 'Roboto';
+  font-weight: 500;
+  font-size: 20px;
+  color: #000000;
+  opacity: 0.43;
+}
+
+button{
+  width: 306px;
+  height: 42px;
+  border-radius: 9px;
+  outline: none;
+  appearance: none;
+  background-color: transparent;
+  cursor: pointer;
+  align-self: center;
+  font-size: 1.25rem;
+  letter-spacing: 0.07em;
+  line-height: 1;
+  text-decoration: none;
+  font-weight: 700;
+  border: #F3A683;
+  color: #292929;
+  box-shadow: 0 0 40px 40px #F3A683 inset, 0 0 0 0 #F3A683;
+  transition: all 150ms ease-in-out;
+}
+
+.btn:hover{
+  color: #F3A683;
+  outline: 0;
+  box-shadow: 0 0 5px 0 #F3A683 inset, 0 0 5px 2px #F3A683;
+}
+
+.btn:active {
+  transform: scale(0.98);
+}
+
+.reg-content-p-1 {
+  text-align: right;
+  margin-top: 24px;
+}
+
+.reg-content-p a {
+  font-family: 'Roboto';
+  font-weight: 100;
+  color: #F3A683;
+  font-size: 15px;
+  text-decoration: none;
+}
+
+.reg-content-p-2{
+  text-align: center;
+  margin-top: 24px;
+}
+
+.reg-content-p-2 span {
+  color: #FFFFFF;
+  font-size: 20px;
+  font-family: 'Roboto';
+  font-weight: 300;
+}
+
+.reg-content-p-3 {
+  text-align: center;
+  margin-top: 12px;
+}
+
+.reg-content-p-3 a {
+  color: #F3A683;
+  font-size: 20px;
+  font-family: 'Roboto';
+  font-weight: 300;
+}
+
+

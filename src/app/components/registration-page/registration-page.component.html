@@ -1,0 +1,102 @@
+<div class="main">
+   <div class="reg">
+      <form [formGroup]="form" (ngSubmit)="onSubmit()" class="reg-content">
+         <p class="p-reg">posts</p>
+         <input formControlName="userLogin" type="email" placeholder="Email" />
+         <span
+            *ngIf="
+               form.get('userLogin').invalid && form.get('userLogin').touched
+            "
+         >
+            <span *ngIf="form.get('userLogin').errors['required']">
+               Введите Email
+            </span>
+            <span *ngIf="form.get('userLogin').errors['email']">
+               Введите корректный Email
+            </span>
+         </span>
+         <input
+            formControlName="userPassword"
+            type="password"
+            placeholder="Пароль"
+         />
+         <span
+            *ngIf="
+               form.get('userPassword').invalid &&
+               form.get('userPassword').touched
+            "
+         >
+            <span *ngIf="form.get('userPassword').errors['required']">
+               Введите пароль
+            </span>
+            <span
+               *ngIf="
+                  form.get('userPassword').errors['minlength'] &&
+                  form.get('userPassword').errors['minlength']['requiredLength']
+               "
+            >
+               Пароль должен быть больше
+               {{
+                  form.get('userPassword').errors['minlength']['requiredLength']
+               }}
+               символов. Сейчас
+               {{
+                  form.get('userPassword').errors['minlength']['actualLength']
+               }}
+            </span>
+         </span>
+         <input
+            formControlName="passwordRep"
+            type="password"
+            placeholder="Повторите пароль"
+         />
+         <span
+            *ngIf="
+               form.get('passwordRep').invalid &&
+               form.get('passwordRep').touched
+            "
+         >
+            <span *ngIf="form.get('passwordRep').errors['required']">
+               Повторите пароль
+            </span>
+         </span>
+         <span
+            *ngIf="
+               form.get('passwordRep').value != form.get('userPassword').value
+            "
+         >
+            Пароли не совпадают
+         </span>
+         <input formControlName="nickname" type="text" placeholder="Никнейм" />
+         <span
+            *ngIf="form.get('nickname').invalid && form.get('nickname').touched"
+         >
+            <span *ngIf="form.get('nickname').errors['required']">
+               Введите никнейм
+            </span>
+            <span
+               *ngIf="
+                  form.get('nickname').errors['minlength'] &&
+                  form.get('nickname').errors['minlength']['requiredLength']
+               "
+            >
+               Никнейм должен быть больше
+               {{ form.get('nickname').errors['minlength']['requiredLength'] }}
+               символов. Сейчас
+               {{ form.get('nickname').errors['minlength']['actualLength'] }}
+            </span>
+         </span>
+         <button
+            class="btn"
+            [disabled]="form.invalid || form.disabled"
+            type="submit"
+         >
+            Зарегистрироваться
+         </button>
+         <div class="reg-content-p">
+            <p class="reg-content-p-2"><span>Уже есть аккаунт?</span></p>
+            <p class="reg-content-p-3"><a routerLink="/login">Войти</a></p>
+         </div>
+      </form>
+   </div>
+</div>
