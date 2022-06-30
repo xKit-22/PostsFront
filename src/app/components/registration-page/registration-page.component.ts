@@ -29,6 +29,7 @@ export class RegistrationPageComponent implements OnInit, OnDestroy {
             Validators.required,
             Validators.minLength(6),
          ]),
+         passwordRep: new FormControl(null, [Validators.required]),
       })
    }
 

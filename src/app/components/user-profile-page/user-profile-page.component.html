@@ -1,37 +1,99 @@
 <app-header></app-header>
 <div class="main">
-  <div class="main-info">
-    <figure>
-      <img src="../../../assets/cat.png" height="168px" width="168px" alt="avatar">
-    </figure>
-    <div class="main-info-numbers">
-      <p class="main-info-numbers-name">{{user?.nickname}}</p>
-      <div class="main-info-numbers-statistics">
-        <div>
-          <span class="main-info-numbers-statistics-number">{{user?.postsAmount}}</span>
-          <span class="main-info-numbers-statistics-text">постов</span>
-        </div>
-        <div>
-          <span class="main-info-numbers-statistics-number">{{user?.subscribersAmount}}</span>
-          <span class="main-info-numbers-statistics-text">подписчиков</span>
-        </div>
-        <div>
-          <span class="main-info-numbers-statistics-number">255</span>
-          <span class="main-info-numbers-statistics-text">подписок</span>
-        </div>
-        <div>
-          <span class="main-info-numbers-statistics-number">42K</span>
-          <span class="main-info-numbers-statistics-text">лайков</span>
-        </div>
+   <div class="main-info">
+      <figure>
+         <img
+            src="../../../assets/cat.png"
+            height="168px"
+            width="168px"
+            alt="avatar"
+         />
+      </figure>
+      <div class="main-info-numbers">
+         <p class="main-info-numbers-name">{{ user?.nickname }}</p>
+         <div class="main-info-numbers-statistics">
+            <div>
+               <span class="main-info-numbers-statistics-number">{{
+                  user?.postsAmount
+               }}</span>
+               <span class="main-info-numbers-statistics-text">постов</span>
+            </div>
+            <div>
+               <span class="main-info-numbers-statistics-number">{{
+                  user?.subscribersAmount
+               }}</span>
+               <span class="main-info-numbers-statistics-text"
+                  >подписчиков</span
+               >
+            </div>
+            <div>
+               <span class="main-info-numbers-statistics-number">{{
+                  user?.subscriptionsAmount
+               }}</span>
+               <span class="main-info-numbers-statistics-text">подписок</span>
+            </div>
+            <div>
+               <span class="main-info-numbers-statistics-number">42K</span>
+               <span class="main-info-numbers-statistics-text">лайков</span>
+            </div>
+         </div>
+         <div
+            *ngIf="isMyAccount"
+            (click)="addPost()"
+            class="main-info-numbers-addContainer"
+         >
+            <div class="main-info-numbers-addContainer-addPost">
+               <span>+</span>
+            </div>
+         </div>
+         <div
+            *ngIf="isMyAccount === false"
+            (click)="subscribe()"
+            class="main-info-numbers-addContainer"
+         >
+            <div class="to-subscribe main-info-numbers-addContainer-addPost">
+               <span>Подписаться</span>
+            </div>
+         </div>
       </div>
-      <div class="main-info-numbers-addContainer">
-        <div class="main-info-numbers-addContainer-addPost">
-          <span>+</span>
-        </div>
+   </div>
+   <div class="main-posts">
+      <div class="main-posts-post" *ngFor="let post of posts">
+         {{ post.text }}
       </div>
-    </div>
-  </div>
-  <div class="main-posts">
-
-  </div>
+   </div>
 </div>
+<ng-template #content let-modal>
+   <div class="modal-header">
+      <h4 class="modal-title" id="modal-basic-title">Profile update</h4>
+      <button
+         type="button"
+         class="btn-close"
+         aria-label="Close"
+         (click)="modal.dismiss('Cross click')"
+      ></button>
+   </div>
+   <div class="modal-body">
+      <div class="input-group">
+         <textarea
+            [(ngModel)]="input"
+            id="dateOfBirth"
+            class="form-control"
+            name="dp"
+         ></textarea>
+      </div>
+      <div class="modal-footer">
+         <button
+            type="button"
+            class="btn btn-outline-dark"
+            (click)="addPost(); modal.close('Save click')"
+         >
+            Save
+         </button>
+      </div>
+   </div>
+</ng-template>
+
+<button class="btn btn-lg btn-outline-primary" (click)="open(content)">
+   Launch demo modal
+</button>

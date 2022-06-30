@@ -1,4 +1,6 @@
 /* You can add global styles to this file, and also import other style files */
+/* Importing Bootstrap SCSS file. */
+@import '~bootstrap/scss/bootstrap';
 @import url('https://fonts.googleapis.com/css2?family=Pacifico&family=Roboto:wght@100;300;500&display=swap');
 * {
   margin: 0;
@@ -6,7 +8,7 @@
 }
 body {
   height: 100%;
-  background: #292929;
+  background-color: #292929;
   margin: 0;
   padding: 0;
 }

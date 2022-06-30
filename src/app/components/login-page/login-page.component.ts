@@ -44,8 +44,10 @@ export class LoginPageComponent implements OnInit, OnDestroy {
       this.form.disable()
       this.aSub = this.auth.login(this.form.value).subscribe(
          (token) => {
-           const userId: string = this.auth.extractUserIdFromToken(token.token);
-           this.router.navigate([`/user/${userId}`])
+            const userId: string = this.auth.extractUserIdFromToken(token.token)
+            localStorage.setItem('currentUser', userId)
+            localStorage.setItem('token', token.token)
+            this.router.navigate([`/user/${userId}`])
          },
          (error) => {
             console.warn(error)

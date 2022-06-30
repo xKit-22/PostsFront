@@ -8,9 +8,7 @@
                form.get('userLogin').invalid && form.get('userLogin').touched
             "
          >
-            <span *ngIf="form.get('userLogin').errors['required']">
-               Введите логин
-            </span>
+            <span *ngIf="form.get('userLogin').errors['required']"> </span>
          </span>
          <input
             formControlName="userPassword"

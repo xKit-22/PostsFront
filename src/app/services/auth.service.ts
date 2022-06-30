@@ -46,6 +46,6 @@ export class AuthService {
    }
 
    extractUserIdFromToken(token: string): string {
-      return JSON.parse(atob(token.split("Bearer ")[1].split(".")[1])).id;
+      return JSON.parse(atob(token.split('.')[1])).id
    }
 }

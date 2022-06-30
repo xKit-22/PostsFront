@@ -29,3 +29,20 @@
   color: #F3A683;
 }
 
+form {
+  position: relative;
+}
+
+.modal-native {
+  color: #292929;
+  position: absolute;
+  top: 128%;
+  background-color: #FFFFFF;
+  border-radius: 10%;
+
+}
+
+.modal-native div{
+  cursor: pointer;
+}
+

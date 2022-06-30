@@ -45,7 +45,28 @@
                }}
             </span>
          </span>
-         <input type="password" placeholder="Повторите пароль" />
+         <input
+            formControlName="passwordRep"
+            type="password"
+            placeholder="Повторите пароль"
+         />
+         <span
+            *ngIf="
+               form.get('passwordRep').invalid &&
+               form.get('passwordRep').touched
+            "
+         >
+            <span *ngIf="form.get('passwordRep').errors['required']">
+               Повторите пароль
+            </span>
+         </span>
+         <span
+            *ngIf="
+               form.get('passwordRep').value != form.get('userPassword').value
+            "
+         >
+            Пароли не совпадают
+         </span>
          <input formControlName="nickname" type="text" placeholder="Никнейм" />
          <span
             *ngIf="form.get('nickname').invalid && form.get('nickname').touched"
