@@ -23,7 +23,15 @@ export class PostService {
          picture: 'pictureDef',
          likesAmount: 0,
          authorId: userId,
-         dateOfCreation: new Date().toString(),
+         dateOfCreation: +new Date(),
       })
+   }
+
+   likePost(id: string): Observable<Post> {
+      return this.httpClient.get<Post>(SERVER_URL + `/posts/${id}/like`)
+   }
+
+   unlikePost(id: string): Observable<Post> {
+      return this.httpClient.get<Post>(SERVER_URL + `/posts/${id}/unlike`)
    }
 }

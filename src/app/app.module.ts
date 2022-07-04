@@ -11,7 +11,11 @@ import { RegistrationPageComponent } from './components/registration-page/regist
 import { UserProfilePageComponent } from './components/user-profile-page/user-profile-page.component'
 import { CommonModule } from '@angular/common'
 import { NgbModal, NgbModalModule, NgbModule } from '@ng-bootstrap/ng-bootstrap'
-import { JwtInterceptor } from './services/token.interceptor'
+import { JwtInterceptor } from './services/token.interceptor';
+import { FeedComponent } from './components/feed/feed.component';
+import { FeedPostComponent } from './components/feed-post/feed-post.component';
+import { CommentListComponent } from './components/comment-list/comment-list.component';
+import { CommentComponent } from './components/comment/comment.component'
 
 @NgModule({
    declarations: [
@@ -20,6 +24,10 @@ import { JwtInterceptor } from './services/token.interceptor'
       HeaderComponent,
       RegistrationPageComponent,
       UserProfilePageComponent,
+      FeedComponent,
+      FeedPostComponent,
+      CommentListComponent,
+      CommentComponent,
    ],
    imports: [
       BrowserModule,

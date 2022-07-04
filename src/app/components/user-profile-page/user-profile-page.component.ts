@@ -12,6 +12,7 @@ import { NgbModal } from '@ng-bootstrap/ng-bootstrap'
    styleUrls: ['./user-profile-page.component.scss'],
 })
 export class UserProfilePageComponent implements OnInit {
+   currentUserId: string = localStorage.getItem('currentUser')
    userId: string
    postId: string
    user: User

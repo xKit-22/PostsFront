@@ -1,0 +1,5 @@
+<div *ngFor="let comment of comments">
+   <app-comment [comment]="comment"></app-comment>
+</div>
+<textarea [(ngModel)]="input"></textarea>
+<button (click)="addComment()">add</button>

@@ -1,26 +1,30 @@
 .main {
-  margin-right: 270px;
-  margin-left: 270px;
+  padding-right: 12%;
+  padding-left: 12%;
   margin-top: 50px;
 }
 
 .main-info {
   display: flex;
+  border-bottom: 1.5px solid #F3A683;
+  padding-bottom: 2%;
+  -webkit-box-shadow: 0 10px 8px -5px rgba(50, 50, 50, 0.75);
 }
 
 .main-info-numbers {
   width: 100%;
+  margin-left: 3%;
 }
 
 figure {
   padding: 0;
-  margin: 0 90px 0 0;
+  margin: 0;
 }
 
 .main-info-numbers-name {
   font-family: 'Roboto';
   font-weight: 400;
-  font-size: 44px;
+  font-size: 2rem;
   color: #F3A683;
   margin-bottom: 30px;
 }
@@ -39,14 +43,14 @@ figure {
 .main-info-numbers-statistics-number {
   font-family: 'Roboto';
   font-weight: 500;
-  font-size: 50px;
+  font-size: 2rem;
   color: #F3A683;
 }
 
 .main-info-numbers-statistics-text {
   font-family: 'Roboto';
   font-weight: 300;
-  font-size: 25px;
+  font-size: 1.5rem;
   color: #FFFFFF;
 }
 
@@ -58,11 +62,18 @@ figure {
 }
 
 .main-info-numbers-addContainer-addPost {
-  width: 63px;
-  height: 63px;
+  width: 55px;
+  height: 55px;
   background: #F3A683;
   border-radius: 9px;
-  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.main-info-numbers-addContainer-addPost:active {
+  transform: scale(0.98);
 }
 
 .main-info-numbers-addContainer-addPost span {
@@ -70,10 +81,59 @@ figure {
   font-weight: 400;
   font-size: 45px;
   color: #292929;
-  margin-bottom: 10px;
+}
+
+.main-posts {
+  margin-top: 2%;
+  margin-bottom: 2%;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
 }
 
 .main-posts-post {
-  color: #FFFFFF;
+  border-radius: 5%;
+  background-color: #F9EEED;
+  box-shadow: 6px 6px 3px 1px rgb(0, 0, 0, 0.5);
+  width: calc((100% /4) - 0.8rem);
+  width: 277px;
+  height: 277px;
 }
 
+.modal-header, .modal-footer, .modal-body {
+  background-color: #292929;
+}
+
+.modal-title {
+  color: #F3A683;
+}
+
+textarea {
+  background-color: #1C1C1C;
+  color: #f9f9fd;
+  border: none;
+  outline:none;
+}
+
+textarea:focus {
+  background-color: #1C1C1C;
+  color: #f9f9fd;
+  border: none;
+  outline:none;
+}
+
+textarea:active {
+  background-color: #1C1C1C;
+  color: #f9f9fd;
+  border: none;
+  outline:none;
+}
+
+.btn-outline-dark {
+  border-color: #F3A683;
+  color: #F3A683;
+}
+
+.btn-outline-dark {
+  outline:none;
+}

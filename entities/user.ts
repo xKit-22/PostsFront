@@ -9,4 +9,5 @@ export interface User {
    dateOfCreation: string
    userLogin: string
    userPassword: string
+   likedPosts: string[]
 }

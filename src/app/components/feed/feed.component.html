@@ -1,0 +1,6 @@
+<app-header [currentUserId]="currentUserId"></app-header>
+<div class="feed">
+   <div *ngFor="let post of posts">
+      <app-feed-post [post]="post" [currentUser]="currentUser"></app-feed-post>
+   </div>
+</div>

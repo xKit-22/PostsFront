@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core'
+import { Component, Input, OnInit } from '@angular/core'
 import { UserService } from '../../services/user.service'
 import { User } from '../../../../entities/user'
 import { Router } from '@angular/router'
@@ -10,9 +10,15 @@ import { filter } from 'rxjs'
    styleUrls: ['./header.component.scss'],
 })
 export class HeaderComponent implements OnInit {
+   @Input()
+   currentUserId: string
+   @Input()
+   nickname: string
    users: User[] = []
    filterUsers: User[] = []
    isModalVisible: boolean = false
+   isImgModalVisible: boolean = false
+
    constructor(private userService: UserService, private router: Router) {}
 
    ngOnInit(): void {
@@ -25,8 +31,18 @@ export class HeaderComponent implements OnInit {
             this.isModalVisible === true &&
             !(event.target as HTMLElement).classList.contains('nicknameList') &&
             !(event.target as HTMLElement).classList.contains('form-control')
-         )
+         ) {
             this.isModalVisible = false
+         }
+
+         if (
+            this.isImgModalVisible === true &&
+            !(event.target as HTMLElement).classList.contains('logout-modal') &&
+            !(event.target as HTMLElement).classList.contains('feed-modal') &&
+            !(event.target as HTMLElement).classList.contains('avatar')
+         ) {
+            this.isImgModalVisible = false
+         }
       })
    }
 
@@ -44,5 +60,14 @@ export class HeaderComponent implements OnInit {
    navigateToUserPage(userId: string) {
       this.router.navigate([`/user/${userId}`])
       this.isModalVisible = false
+   }
+
+   navigateToFeed() {
+      this.router.navigate([`/feed/`])
+      this.isModalVisible = false
+   }
+
+   navigateToHomePage(currentUserId: string) {
+      this.router.navigate([`/user/${currentUserId}`])
    }
 }

@@ -1,0 +1,27 @@
+<div class="post">
+   <p>{{ post.id }}</p>
+   <div class="userInfo">
+      <img src="assets/cat.png" />
+      <p class="post-userName">{{ post.authorId }}</p>
+   </div>
+   <div class="post-img"></div>
+   <div class="likes-comments">
+      <div *ngIf="isPostLiked" (click)="unlike()" class="post-like">
+         <img src="assets/unlike.svg" />
+      </div>
+      <div *ngIf="isPostLiked === false" (click)="like()" class="post-like">
+         <img src="assets/like.svg" />
+      </div>
+      <p class="post-likesAmount">{{ post.likesAmount }}</p>
+      <div class="comment">
+         <img src="assets/comment.svg" />
+      </div>
+   </div>
+   <p class="post-date">{{ post.dateOfCreation }}</p>
+   <p class="post-text">{{ post.text }}</p>
+
+   <app-comment-list
+      [postId]="post.id"
+      [userId]="currentUser.id"
+   ></app-comment-list>
+</div>

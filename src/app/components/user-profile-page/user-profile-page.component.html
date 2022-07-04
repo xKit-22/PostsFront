@@ -1,11 +1,11 @@
-<app-header></app-header>
+<app-header [currentUserId]="currentUserId"></app-header>
 <div class="main">
    <div class="main-info">
       <figure>
          <img
             src="../../../assets/cat.png"
-            height="168px"
-            width="168px"
+            height="130px"
+            width="130px"
             alt="avatar"
          />
       </figure>
@@ -33,25 +33,28 @@
                <span class="main-info-numbers-statistics-text">подписок</span>
             </div>
             <div>
-               <span class="main-info-numbers-statistics-number">42K</span>
+               <span class="main-info-numbers-statistics-number">{{
+                  user?.allLikesAmount
+               }}</span>
                <span class="main-info-numbers-statistics-text">лайков</span>
             </div>
          </div>
-         <div
-            *ngIf="isMyAccount"
-            (click)="addPost()"
-            class="main-info-numbers-addContainer"
-         >
-            <div class="main-info-numbers-addContainer-addPost">
+         <div *ngIf="isMyAccount" class="main-info-numbers-addContainer">
+            <div
+               class="main-info-numbers-addContainer-addPost"
+               (click)="open(content)"
+            >
                <span>+</span>
             </div>
          </div>
          <div
             *ngIf="isMyAccount === false"
-            (click)="subscribe()"
             class="main-info-numbers-addContainer"
          >
-            <div class="to-subscribe main-info-numbers-addContainer-addPost">
+            <div
+               class="to-subscribe main-info-numbers-addContainer-addPost"
+               (click)="subscribe()"
+            >
                <span>Подписаться</span>
             </div>
          </div>
@@ -63,9 +66,10 @@
       </div>
    </div>
 </div>
+
 <ng-template #content let-modal>
    <div class="modal-header">
-      <h4 class="modal-title" id="modal-basic-title">Profile update</h4>
+      <h4 class="modal-title" id="modal-basic-title">Добавить публикацию</h4>
       <button
          type="button"
          class="btn-close"
@@ -88,12 +92,8 @@
             class="btn btn-outline-dark"
             (click)="addPost(); modal.close('Save click')"
          >
-            Save
+            Готово
          </button>
       </div>
    </div>
 </ng-template>
-
-<button class="btn btn-lg btn-outline-primary" (click)="open(content)">
-   Launch demo modal
-</button>
